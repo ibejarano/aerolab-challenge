@@ -13,7 +13,7 @@ const Layout: React.FC = ({ children }) => {
       <figure>
         <h2>Electronics</h2>
       </figure>
-      <section>{children}</section>
+      {children}
     </main>
   );
 };
