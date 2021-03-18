@@ -16,12 +16,13 @@
   grid-template-rows: 50px 450px 1fr;
 
   nav {
+    position: sticky;
+    top: 0;
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    // padding: 3px;
 
     img {
       animation: fly 1s infinite alternate ease-in-out;

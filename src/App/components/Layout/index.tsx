@@ -3,16 +3,14 @@ import * as React from "react";
 import logo from "../../../assets/logo.svg";
 import styles from "./Layout.module.scss";
 
-const Layout: React.FC = ({ children, user }) => {
-  console.log("Layout");
-  console.log(user.points);
+const Layout: React.FC = ({ children, userName, points }) => {
   return (
     <main className={styles.container}>
       <nav>
         <img alt="Aerolab" src={logo} />
         <div>
-          <p>{user.name}</p>
-          <span>{user.points}</span>
+          <p>{userName}</p>
+          <span>{points}</span>
         </div>
       </nav>
       <figure>

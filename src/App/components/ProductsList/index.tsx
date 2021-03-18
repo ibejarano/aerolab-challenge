@@ -5,7 +5,7 @@ import Product from "./Product";
 
 import { getProducts } from "../../handlers/userHandler";
 
-const ProductsList: React.FC = ({ points }) => {
+const ProductsList: React.FC = ({ setPoints, points }) => {
   const [loading, setLoading] = React.useState(true);
   const [products, setProducts] = React.useState([]);
 
@@ -27,7 +27,12 @@ const ProductsList: React.FC = ({ points }) => {
   return (
     <div className={styles.container}>
       {products.map((product) => (
-        <Product {...product} points={points} />
+        <Product
+          key={product._id}
+          {...product}
+          points={points}
+          setPoints={setPoints}
+        />
       ))}
     </div>
   );

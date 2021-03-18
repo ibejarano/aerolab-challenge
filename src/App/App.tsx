@@ -5,13 +5,15 @@ import Layout from "./components/Layout";
 import ProductsList from "./components/ProductsList";
 
 const App: React.FC = () => {
-  const [user, setUser] = React.useState({});
+  const [userName, setUserName] = React.useState("");
+  const [points, setPoints] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function fetchData() {
-      const data = await getUserInfo();
-      setUser(data);
+      const { name, points } = await getUserInfo();
+      setUserName(name);
+      setPoints(points);
       setLoading(false);
     }
     fetchData();
@@ -20,8 +22,8 @@ const App: React.FC = () => {
   if (loading) return <h3>Loading....</h3>;
 
   return (
-    <Layout user={user}>
-      <ProductsList points={user.points} />
+    <Layout userName={userName} points={points}>
+      <ProductsList setPoints={setPoints} points={points} />
     </Layout>
   );
 };

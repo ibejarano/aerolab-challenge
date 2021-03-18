@@ -21,4 +21,12 @@ async function getUserInfo() {
   return data;
 }
 
-export { getProducts, getUserInfo };
+async function redeemProduct(productId) {
+  const { data: message } = await transport.post(`${BASE_URL}/redeem`, {
+    productId,
+  });
+
+  return message;
+}
+
+export { getProducts, getUserInfo, redeemProduct };
