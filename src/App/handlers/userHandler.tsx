@@ -1,0 +1,24 @@
+import axios from "axios";
+
+const API_KEY: string =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUyNzYyMDdlNzE4NzAwMjBlMzhmOWMiLCJpYXQiOjE2MTYwMTY5Mjh9.APAtK92Np-NroHBYtjZWL_IifWTfC5ZIvV5uSQ_NPnA";
+
+const BASE_URL = "https://coding-challenge-api.aerolab.co";
+
+const config = {
+  headers: { Authorization: `Bearer ${API_KEY}` },
+};
+
+const transport = axios.create(config);
+
+async function getProducts() {
+  const { data } = await transport.get(`${BASE_URL}/products`);
+  return data;
+}
+
+async function getUserInfo() {
+  const { data } = await transport.get(`${BASE_URL}/user/me`);
+  return data;
+}
+
+export { getProducts, getUserInfo };

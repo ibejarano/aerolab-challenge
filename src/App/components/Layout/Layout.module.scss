@@ -21,22 +21,24 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding: 3px;
-    h1 {
-      font-weight: 800;
-      font-size: 2rem;
-      margin: 0;
-      margin-bottom: 6px;
-    }
+    // padding: 3px;
+
     img {
       animation: fly 1s infinite alternate ease-in-out;
       width: 36px;
     }
 
-    h3 {
-      font-weight: 300;
-      font-size: 1.25rem;
-      margin: 0;
+    div {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      span {
+        margin: 1em;
+        background: rgba(220, 220, 220);
+        padding: 0.5em 1.5em;
+        border-radius: 1em;
+      }
     }
   }
 
