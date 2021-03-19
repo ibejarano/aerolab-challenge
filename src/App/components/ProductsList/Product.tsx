@@ -24,8 +24,11 @@ const Product: React.FC = ({
           redeeming ? styles.containerRedeeming : styles.containerUnavailable
         }
       >
+        <span>
+          You need {cost}
+          <img alt="coin" src={coin} />
+        </span>
         <img className={styles.productImage} alt={name} src={img.url} />
-
         <p>{category}</p>
         <h1>{name}</h1>
       </div>
