@@ -22,6 +22,10 @@
     background-color: white;
     border: none;
   }
+
+  span {
+    margin-right: 2em;
+  }
 }
 
 .sort-container {
@@ -42,6 +46,11 @@
 
   button:hover {
     background-color: lightskyblue;
+    color: white;
+  }
+
+  button:disabled {
+    background: blue;
     color: white;
   }
 }
