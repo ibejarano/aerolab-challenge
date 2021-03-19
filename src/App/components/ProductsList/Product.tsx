@@ -1,9 +1,13 @@
 import * as React from "react";
 import styles from "./Product.module.scss";
+
+import coin from "../../../assets/icons/coin.svg";
+import buyLogo from "../../../assets/icons/buy-blue.svg";
 import { redeemProduct } from "../../handlers/userHandler";
 
 const Product: React.FC = ({
   name,
+  category,
   cost,
   _id,
   img,
@@ -20,10 +24,10 @@ const Product: React.FC = ({
           redeeming ? styles.containerRedeeming : styles.containerUnavailable
         }
       >
-        <img alt={name} src={img.url} />
-        <h3>Cost: {cost}</h3>
-        <h3>You need {cost - points} more</h3>
-        <p>{name}</p>
+        <img className={styles.productImage} alt={name} src={img.url} />
+
+        <p>{category}</p>
+        <h1>{name}</h1>
       </div>
     );
   }
@@ -43,10 +47,15 @@ const Product: React.FC = ({
         redeeming ? styles.containerRedeeming : styles.containerAvailable
       }
     >
-      <h3>Cost: {cost}</h3>
-      <img alt={name} src={img.url} />
-      <p>{name}</p>
+      <img className={styles.buyLogo} alt="buy logo" src={buyLogo} />
+      <img className={styles.productImage} alt={name} src={img.url} />
+      <p>{category}</p>
+      <h1>{name}</h1>
       <div className={styles.redeem}>
+        <span>
+          {cost}
+          <img alt="coin" src={coin} />
+        </span>
         <button onClick={handleRedeem} disabled={redeeming}>
           Redeem now!
         </button>

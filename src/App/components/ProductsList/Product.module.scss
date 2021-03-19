@@ -1,33 +1,66 @@
 .container_available {
-  background: lightblue;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(210, 210, 210);
+  width: 275px;
+  height: 250px;
+  margin: 1em;
+  padding: 0.5em 2em;
+  text-align: left;
+  box-shadow: 3px 5px 10px rgb(210, 210, 210);
 
-  h3 {
+  .buy-logo {
     position: relative;
-    left: 230px;
-    background: rgb(230, 230, 230);
-    max-width: 100px;
-    border-radius: 50px;
+    top: 8px;
+    left: 180px;
+  }
+
+  .product-image {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+  }
+
+  h1 {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+
+  P {
+    margin: 0;
+    font-size: 16px;
+    color: grey;
   }
 
   .redeem {
     display: none;
     position: relative;
-    top: -92%;
-    left: -10%;
-    background: rgba(0, 0, 250, 0.4);
+    top: -243px;
+    left: -32px;
+    background: rgba(40, 200, 220, 0.85);
     justify-content: center;
     align-items: center;
     border: none;
+    width: 274px;
+    height: 248px;
 
     button {
       width: 50%;
-      height: 50px;
-      font-size: 1.2em;
-      background: blue;
+      padding: 0.5em;
+      font-size: 1em;
+      background: white;
       border-radius: 50px;
       border: none;
-      color: white;
+      color: grey;
       cursor: pointer;
+    }
+
+    span {
+      color: white;
+      height: 48px;
+      font-size: 34px;
+      display: flex;
     }
   }
 }
@@ -35,11 +68,39 @@
 .container_available:hover {
   .redeem {
     display: flex;
+    flex-flow: column nowrap;
   }
 }
 
 .container_unavailable {
-  background: rgb(230, 230, 230);
+  filter: brightness(0.7);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(210, 210, 210);
+  width: 275px;
+  height: 250px;
+  margin: 1em;
+  padding: 0.5em 2em;
+  text-align: left;
+  box-shadow: 3px 5px 10px rgb(210, 210, 210);
+
+  .product-image {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    // margin-top: -40px;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+  }
+
+  h1 {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+
+  P {
+    margin: 0;
+    font-size: 16px;
+    color: grey;
+  }
 }
 
 .container_redeeming {
