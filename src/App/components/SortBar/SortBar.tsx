@@ -1,22 +1,19 @@
 import * as React from "react";
 import { container } from "./SortBar.module.scss";
 
-const SortBar: React.FC = ({ products, setProducts, setSort, setCurrPage }) => {
+const SortBar: React.FC = ({ allProducts, setSort, setCurrPage }) => {
   const sortByAscendingPrice = () => {
-    const sorted = products.sort((a, b) => (a.cost > b.cost ? 1 : -1));
-    setProducts(sorted);
+    allProducts = allProducts.sort((a, b) => (a.cost > b.cost ? 1 : -1));
     setSort("ascendingPrice");
   };
 
   const sortByDescendingPrice = () => {
-    const sorted = products.sort((a, b) => (a.cost < b.cost ? 1 : -1));
-    setProducts(sorted);
+    allProducts = allProducts.sort((a, b) => (a.cost < b.cost ? 1 : -1));
     setSort("descendingPrice");
   };
 
   const sortByRecent = () => {
-    const sorted = products.sort((a, b) => (a._id > b._id ? 1 : -1));
-    setProducts(sorted);
+    allProducts = allProducts.sort((a, b) => (a._id > b._id ? 1 : -1));
     setSort("recent");
   };
 
@@ -30,8 +27,7 @@ const SortBar: React.FC = ({ products, setProducts, setSort, setCurrPage }) => {
       </div>
       <div>
         <button onClick={() => setCurrPage((page) => page + 1)}>
-          {" "}
-          Next Page{" "}
+          Next Page
         </button>
       </div>
     </div>

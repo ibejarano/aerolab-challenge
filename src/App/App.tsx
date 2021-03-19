@@ -51,8 +51,7 @@ const App: React.FC = () => {
   return (
     <Layout userName={userName} points={points}>
       <SortBar
-        products={products}
-        setProducts={setProducts}
+        allProducts={allProducts}
         setSort={setSort}
         setCurrPage={setCurrPage}
       />
