@@ -1,6 +1,8 @@
 import * as React from "react";
 
 import logo from "../../../assets/logo.svg";
+import coin from "../../../assets/icons/coin.svg";
+
 import styles from "./Layout.module.scss";
 
 import History from "../History/History";
@@ -12,7 +14,10 @@ const Layout: React.FC = ({ children, userName, points }) => {
         <img alt="Aerolab" src={logo} />
         <div>
           <p>{userName}</p>
-          <span>{points}</span>
+          <span>
+            <p>{points}</p>
+            <img alt="coin" src={coin} />
+          </span>
           <History />
         </div>
       </nav>
