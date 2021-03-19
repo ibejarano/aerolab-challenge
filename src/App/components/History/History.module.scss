@@ -1,4 +1,19 @@
 .container {
-  background: white;
-  font-size: 12px;
+  button {
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid grey;
+  }
+
+  table {
+    top: 50px;
+    right: 0;
+    background: white;
+    font-size: 12px;
+    width: 280px;
+    max-height: 400px;
+    position: absolute;
+    overflow: scroll;
+  }
 }

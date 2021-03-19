@@ -6,6 +6,11 @@ import { getHistory } from "../../handlers/userHandler";
 
 const Layout: React.FC = () => {
   const [history, setHistory] = React.useState([]);
+  const [viewHistory, setViewHistory] = React.useState(false);
+
+  const handleToggle = () => {
+    setViewHistory((prev) => !prev);
+  };
 
   React.useEffect(() => {
     async function fetchData() {
@@ -17,13 +22,23 @@ const Layout: React.FC = () => {
 
   return (
     <section className={styles.container}>
-      {history.map((p, idx) => (
-        <div key={idx}>
-          <p>
-            {p.name} {p.cost}
-          </p>
-        </div>
-      ))}
+      <button onClick={handleToggle}>View History</button>
+      {viewHistory && (
+        <table>
+          <tr>
+            <th>Product</th>
+            <th>Cost</th>
+            <th>Redeem date</th>
+          </tr>
+          {history.map((p, idx) => (
+            <tr key={idx}>
+              <td>{p.name}</td>
+              <td>{p.cost}</td>
+              <td>{new Date(p.createDate).toLocaleDateString()}</td>
+            </tr>
+          ))}
+        </table>
+      )}
     </section>
   );
 };

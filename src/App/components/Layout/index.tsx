@@ -11,9 +11,9 @@ const Layout: React.FC = ({ children, userName, points }) => {
       <nav>
         <img alt="Aerolab" src={logo} />
         <div>
-          <History />
           <p>{userName}</p>
           <span>{points}</span>
+          <History />
         </div>
       </nav>
       <figure>
