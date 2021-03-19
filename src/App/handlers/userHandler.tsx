@@ -29,4 +29,10 @@ async function redeemProduct(productId) {
   return message;
 }
 
-export { getProducts, getUserInfo, redeemProduct };
+async function getHistory() {
+  const { data } = await transport.get(`${BASE_URL}/user/history`);
+
+  return data;
+}
+
+export { getProducts, getUserInfo, redeemProduct, getHistory };
