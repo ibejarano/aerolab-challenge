@@ -53,6 +53,7 @@ const App: React.FC = () => {
       <SortBar
         allProducts={allProducts}
         setSort={setSort}
+        currPage={currPage}
         setCurrPage={setCurrPage}
       />
       <ProductsList setPoints={setPoints} points={points} products={products} />
