@@ -41,3 +41,22 @@
 .container_unavailable {
   background: rgb(230, 230, 230);
 }
+
+.container_redeeming {
+  background: grey;
+  filter: opacity(50%);
+
+  .redeem {
+    display: none;
+
+    button {
+      width: 50%;
+      height: 50px;
+      font-size: 1.2em;
+      background: gray;
+      border-radius: 50px;
+      border: none;
+      color: white;
+    }
+  }
+}

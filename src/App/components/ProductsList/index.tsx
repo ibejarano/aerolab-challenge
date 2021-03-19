@@ -7,6 +7,7 @@ import { getProducts } from "../../handlers/userHandler";
 
 const ProductsList: React.FC = ({ setPoints, points }) => {
   const [loading, setLoading] = React.useState(true);
+  const [redeeming, setRedeeming] = React.useState(false);
   const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
@@ -32,6 +33,8 @@ const ProductsList: React.FC = ({ setPoints, points }) => {
           {...product}
           points={points}
           setPoints={setPoints}
+          redeeming={redeeming}
+          setRedeeming={setRedeeming}
         />
       ))}
     </div>
