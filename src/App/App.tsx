@@ -5,12 +5,16 @@ import Layout from "./components/Layout";
 import ProductsList from "./components/ProductsList";
 import { SortBar } from "./components/SortBar";
 
+let allProducts: any[] = [];
+const PRODUCTS_PER_PAGE: number = 16;
+
 const App: React.FC = () => {
   const [userName, setUserName] = React.useState("");
   const [points, setPoints] = React.useState(0);
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
+  const [currPage, setCurrPage] = React.useState(0);
   const [sort, setSort] = React.useState("");
 
   React.useEffect(() => {
@@ -18,18 +22,29 @@ const App: React.FC = () => {
       const { name, points } = await getUserInfo();
       setPoints(points);
       setUserName(name);
-      const data = await getProducts();
-      setProducts(data);
+      allProducts = await getProducts();
+      setProducts(
+        allProducts.slice(
+          currPage * PRODUCTS_PER_PAGE,
+          (currPage + 1) * PRODUCTS_PER_PAGE
+        )
+      );
       setLoading(false);
     }
 
     if (loading) {
-      console.log("Fetching...")
+      console.log("Fetching...");
       fetchData();
     } else {
       console.log("Not fetching... Re render!");
+      setProducts(
+        allProducts.slice(
+          currPage * PRODUCTS_PER_PAGE,
+          (currPage + 1) * PRODUCTS_PER_PAGE
+        )
+      );
     }
-  }, [sort]);
+  }, [sort, currPage]);
 
   if (loading) return <h3>Loading....</h3>;
 
@@ -39,6 +54,7 @@ const App: React.FC = () => {
         products={products}
         setProducts={setProducts}
         setSort={setSort}
+        setCurrPage={setCurrPage}
       />
       <ProductsList setPoints={setPoints} points={points} products={products} />
     </Layout>
