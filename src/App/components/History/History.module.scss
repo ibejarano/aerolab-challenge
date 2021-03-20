@@ -8,12 +8,11 @@
 
   table {
     top: 50px;
-    right: 0;
+    right: 10px;
     background: white;
-    font-size: 12px;
-    width: 280px;
-    max-height: 400px;
+    font-size: 14px;
+    width: 320px;
     position: absolute;
-    overflow: scroll;
+    border: 1px solid black;
   }
 }
