@@ -36,6 +36,16 @@
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      margin-right: 2em;
+
+      button {
+        margin: 0 0.3em;
+        background: rgb(18, 141, 163);
+        border: none;
+        border-radius: 20px;
+        color: white;
+        padding: 4px 8px;
+      }
 
       span {
         margin: 1em;

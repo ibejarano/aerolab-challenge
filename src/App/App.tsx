@@ -49,7 +49,7 @@ const App: React.FC = () => {
   if (loading) return <h3>Loading....</h3>;
 
   return (
-    <Layout userName={userName} points={points}>
+    <Layout userName={userName} points={points} setPoints={setPoints}>
       <SortBar
         allProducts={allProducts}
         setSort={setSort}

@@ -35,4 +35,12 @@ async function getHistory() {
   return data;
 }
 
-export { getProducts, getUserInfo, redeemProduct, getHistory };
+async function addPoints(amount) {
+  const { data } = await transport.post(`${BASE_URL}/user/points`, {
+    amount,
+  });
+
+  return data;
+}
+
+export { getProducts, getUserInfo, redeemProduct, getHistory, addPoints };
