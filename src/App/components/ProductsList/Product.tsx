@@ -6,15 +6,29 @@ import coin from "../../../assets/icons/coin.svg";
 import buyLogo from "../../../assets/icons/buy-blue.svg";
 import { redeemProduct } from "../../handlers/userHandler";
 
-const Product: React.FC = ({
+interface Props {
+  name: string;
+  category: string;
+  cost: number;
+  _id: string;
+  img: {
+    url: string;
+  };
+  points: number;
+  redeeming: boolean;
+  setPoints: (amount: (prev: number) => number) => void;
+  setRedeeming: (redeeming: boolean) => void;
+}
+
+const Product: React.FC<Props> = ({
   name,
   category,
   cost,
   _id,
   img,
   points,
-  setPoints,
   redeeming,
+  setPoints,
   setRedeeming,
 }) => {
   if (cost > points) {

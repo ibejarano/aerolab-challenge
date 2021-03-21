@@ -3,7 +3,22 @@ import * as React from "react";
 import styles from "./ProductsList.module.scss";
 import Product from "./Product";
 
-const ProductsList: React.FC = ({ setPoints, points, products }) => {
+interface IProduct {
+  name: string;
+  category: string;
+  cost: number;
+  _id: string;
+  img: {
+    url: string;
+  };
+}
+interface Props {
+  points: number;
+  products: IProduct[];
+  setPoints: (amount: (prev: number) => number) => void;
+}
+
+const ProductsList: React.FC<Props> = ({ setPoints, points, products }) => {
   const [redeeming, setRedeeming] = React.useState(false);
 
   return (
