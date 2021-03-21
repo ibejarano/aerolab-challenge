@@ -7,17 +7,27 @@ import { Navbar } from "./components/Navbar";
 import { ProductsList } from "./components/ProductsList";
 import { SortBar } from "./components/SortBar";
 
-let allProducts: any[] = [];
+interface Product {
+  name: string;
+  category: string;
+  cost: number;
+  _id: string;
+  img: {
+    url: string;
+  };
+}
+
+let allProducts: Product[];
 const PRODUCTS_PER_PAGE: number = 16;
 
 const App: React.FC = () => {
   const [userName, setUserName] = React.useState("");
   const [points, setPoints] = React.useState(0);
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState<Product[]>([]);
   const [loading, setLoading] = React.useState(true);
 
-  const [currPage, setCurrPage] = React.useState(0);
-  const [sort, setSort] = React.useState("");
+  const [currPage, setCurrPage] = React.useState<number>(0);
+  const [sort, setSort] = React.useState("recent");
 
   React.useEffect(() => {
     async function fetchData() {
