@@ -32,7 +32,7 @@ const NavBar: React.FC = ({ userName, points, setPoints }) => {
           <p>{points}</p>
           <img alt="coin" src={coin} />
         </span>
-        <History />
+        <History points={points} />
       </div>
     </nav>
   );

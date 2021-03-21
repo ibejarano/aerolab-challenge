@@ -4,15 +4,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import styles from "./Layout.module.scss";
 
-import NavBar from "./NavBar";
-
-const Layout: React.FC = ({ children, userName, points, setPoints }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <main className={styles.container}>
-      <NavBar userName={userName} points={points} setPoints={setPoints} />
-      <figure>
-        <h2>Electronics</h2>
-      </figure>
       {children}
       <ToastContainer />
     </main>

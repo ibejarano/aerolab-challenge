@@ -4,7 +4,7 @@ import styles from "./History.module.scss";
 
 import { getHistory } from "../../handlers/userHandler";
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ points }) => {
   const [history, setHistory] = React.useState([]);
   const [viewHistory, setViewHistory] = React.useState(false);
 
@@ -17,8 +17,9 @@ const Layout: React.FC = () => {
       const data = await getHistory();
       setHistory(data);
     }
+    console.log("fetching history");
     fetchData();
-  }, []);
+  }, [points]);
 
   return (
     <section className={styles.container}>

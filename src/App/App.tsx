@@ -3,6 +3,7 @@ import * as React from "react";
 import { getUserInfo, getProducts } from "./handlers/userHandler";
 import { Layout } from "./components/Layout";
 import { LoadingScreen } from "./components/LoadingScreen";
+import { Navbar } from "./components/Navbar";
 import { ProductsList } from "./components/ProductsList";
 import { SortBar } from "./components/SortBar";
 
@@ -50,7 +51,11 @@ const App: React.FC = () => {
   if (loading) return <LoadingScreen />;
 
   return (
-    <Layout userName={userName} points={points} setPoints={setPoints}>
+    <Layout>
+      <Navbar userName={userName} points={points} setPoints={setPoints} />
+      <figure>
+        <h2>Electronics</h2>
+      </figure>
       <SortBar
         allProducts={allProducts}
         setSort={setSort}
