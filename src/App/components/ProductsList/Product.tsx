@@ -1,6 +1,7 @@
 import * as React from "react";
-import styles from "./Product.module.scss";
+import { toast } from "react-toastify";
 
+import styles from "./Product.module.scss";
 import coin from "../../../assets/icons/coin.svg";
 import buyLogo from "../../../assets/icons/buy-blue.svg";
 import { redeemProduct } from "../../handlers/userHandler";
@@ -40,7 +41,9 @@ const Product: React.FC = ({
     const { message } = await redeemProduct(_id);
     setRedeeming(false);
     setPoints((prevPoi) => prevPoi - cost);
-    console.log(message);
+    toast.info(message, {
+      position: "bottom-right",
+    });
   };
 
   return (
