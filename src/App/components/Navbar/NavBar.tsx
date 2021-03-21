@@ -6,9 +6,15 @@ import logo from "../../../assets/logo.svg";
 import coin from "../../../assets/icons/coin.svg";
 
 import { addPoints } from "../../handlers/userHandler";
-import History from "../History/History";
+import { History } from "../History";
 
-const NavBar: React.FC = ({ userName, points, setPoints }) => {
+interface Props {
+  userName: string;
+  points: number;
+  setPoints: (amount: number) => void;
+}
+
+const NavBar: React.FC<Props> = ({ userName, points, setPoints }) => {
   const handleAddPoints = async (amount) => {
     const data = await addPoints(amount);
     setPoints(data["New Points"]);

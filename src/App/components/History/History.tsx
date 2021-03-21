@@ -4,9 +4,18 @@ import styles from "./History.module.scss";
 
 import { getHistory } from "../../handlers/userHandler";
 
-const Layout: React.FC = ({ points }) => {
-  const [history, setHistory] = React.useState([]);
-  const [viewHistory, setViewHistory] = React.useState(false);
+interface RedeemHistory {
+  name: string;
+  cost: number;
+  createDate: Date;
+}
+interface Props {
+  points: number;
+}
+
+const Layout: React.FC<Props> = ({ points }) => {
+  const [history, setHistory] = React.useState<RedeemHistory[] | null>(null);
+  const [viewHistory, setViewHistory] = React.useState<boolean>(false);
 
   const handleToggle = () => {
     setViewHistory((prev) => !prev);
@@ -20,6 +29,18 @@ const Layout: React.FC = ({ points }) => {
     console.log("fetching history");
     fetchData();
   }, [points]);
+
+  if (!history)
+    return (
+      <section className={styles.container}>
+        <button onClick={handleToggle}>View History</button>
+        {viewHistory && (
+          <div className={styles.noRedeems}>
+            <p>Empty redeems history</p>
+          </div>
+        )}
+      </section>
+    );
 
   return (
     <section className={styles.container}>
