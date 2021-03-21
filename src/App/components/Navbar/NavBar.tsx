@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import logo from "../../../assets/logo.svg";
 import coin from "../../../assets/icons/coin.svg";
 
-import { addPoints } from "../../handlers/userHandler";
+import { addPoints } from "../../handlers/apiHandler";
 import { History } from "../History";
 
 interface Props {

@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API_KEY: string =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUyNzYyMDdlNzE4NzAwMjBlMzhmOWMiLCJpYXQiOjE2MTYwMTY5Mjh9.APAtK92Np-NroHBYtjZWL_IifWTfC5ZIvV5uSQ_NPnA";
+const API_KEY = import.meta.env.VITE_API_TOKEN;
 
 const BASE_URL = "https://coding-challenge-api.aerolab.co";
 
@@ -21,7 +20,7 @@ async function getUserInfo() {
   return data;
 }
 
-async function redeemProduct(productId) {
+async function redeemProduct(productId: string) {
   const { data: message } = await transport.post(`${BASE_URL}/redeem`, {
     productId,
   });
@@ -35,7 +34,7 @@ async function getHistory() {
   return data;
 }
 
-async function addPoints(amount) {
+async function addPoints(amount: number) {
   const { data } = await transport.post(`${BASE_URL}/user/points`, {
     amount,
   });

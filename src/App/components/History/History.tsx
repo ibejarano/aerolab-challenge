@@ -2,7 +2,7 @@ import * as React from "react";
 
 import styles from "./History.module.scss";
 
-import { getHistory } from "../../handlers/userHandler";
+import { getHistory } from "../../handlers/apiHandler";
 
 interface RedeemHistory {
   name: string;

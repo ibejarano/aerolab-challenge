@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { getUserInfo, getProducts } from "./handlers/userHandler";
+import { getUserInfo, getProducts } from "./handlers/apiHandler";
 import { Layout } from "./components/Layout";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";

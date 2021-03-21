@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import styles from "./Product.module.scss";
 import coin from "../../../assets/icons/coin.svg";
 import buyLogo from "../../../assets/icons/buy-blue.svg";
-import { redeemProduct } from "../../handlers/userHandler";
+import { redeemProduct } from "../../handlers/apiHandler";
 
 interface Props {
   name: string;
