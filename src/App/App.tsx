@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import { getUserInfo, getProducts } from "./handlers/userHandler";
-import Layout from "./components/Layout";
+import { Layout } from "./components/Layout";
 import { LoadingScreen } from "./components/LoadingScreen";
-import ProductsList from "./components/ProductsList";
+import { ProductsList } from "./components/ProductsList";
 import { SortBar } from "./components/SortBar";
 
 let allProducts: any[] = [];
