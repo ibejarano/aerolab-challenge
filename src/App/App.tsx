@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { getUserInfo, getProducts } from "./handlers/userHandler";
 import Layout from "./components/Layout";
+import { LoadingScreen } from "./components/LoadingScreen";
 import ProductsList from "./components/ProductsList";
 import { SortBar } from "./components/SortBar";
 
@@ -46,7 +47,7 @@ const App: React.FC = () => {
     }
   }, [sort, currPage]);
 
-  if (loading) return <h3>Loading....</h3>;
+  if (loading) return <LoadingScreen />;
 
   return (
     <Layout userName={userName} points={points} setPoints={setPoints}>
