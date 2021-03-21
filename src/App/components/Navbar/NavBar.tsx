@@ -15,7 +15,7 @@ interface Props {
 }
 
 const NavBar: React.FC<Props> = ({ userName, points, setPoints }) => {
-  const handleAddPoints = async (amount) => {
+  const handleAddPoints = async (amount: number) => {
     const data = await addPoints(amount);
     setPoints(data["New Points"]);
     toast.info(`${amount} points added`, {
