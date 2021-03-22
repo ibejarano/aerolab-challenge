@@ -47,18 +47,22 @@ const Layout: React.FC<Props> = ({ points }) => {
       <button onClick={handleToggle}>View History</button>
       {viewHistory && (
         <table>
-          <tr>
-            <th>Product</th>
-            <th>Cost</th>
-            <th>Redeem date</th>
-          </tr>
-          {history.map((p, idx) => (
-            <tr key={idx}>
-              <td>{p.name}</td>
-              <td>{p.cost}</td>
-              <td>{new Date(p.createDate).toLocaleDateString()}</td>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Cost</th>
+              <th>Redeem date</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {history.map((p, idx) => (
+              <tr key={idx}>
+                <td>{p.name}</td>
+                <td>{p.cost}</td>
+                <td>{new Date(p.createDate).toLocaleDateString()}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       )}
     </section>
