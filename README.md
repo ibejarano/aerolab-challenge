@@ -1,5 +1,69 @@
 ![Aerolab](./src/assets/logo.svg "Aerolab")
 
+
+# Aerolab challenge
+
+The challenge is to build a catalog view for a loyalty program app.
+
+# [Live Demo](https://aerolab-challenge-7311e.firebaseapp.com/)
+
+# Local setup
+
+### Clone the repo
+
+```
+git@github.com:ibejarano/aerolab-challenge.git
+
+cd aerolab-challenge
+```
+
+### Install dependencies
+
+```
+npm install
+
+o
+
+yarn install
+```
+
+### (Opcional) Set your API Key
+
+Replace `your_api_token` in the `.env` file
+
+```
+VITE_API_TOKEN=your_api_token
+```
+
+*If this step is omitted the app will use my API Key.*
+
+### Init the local server
+
+```
+npm run dev
+
+o
+
+yarn dev
+```
+
+# Stack
+
+- React
+- Typescript
+- SASS
+- Deploy en Firebase
+# Specs
+
+The specification are defined in [this page](https://aerolab.co/coding-challenge-instructions?utm_campaign=Coding%20Challenge)
+### API
+
+Api documentation [link](https://aerolabchallenge.docs.apiary.io/) and get the API key [here](https://aerolab.co/coding-challenge)
+
+
+---
+---
+
 # Aerolab challenge
 
 Challenge propuesto por Aerolab en el que se debe implementar una tienda por puntos siguiendo las [Especificaciones](#Especificaciones) 
@@ -28,7 +92,7 @@ yarn install
 
 ### (Opcional) Definir una API Key
 
-Reemplazar `your_api_token` en `.env`
+Reemplazar `your_api_token` en el archivo `.env`
 
 ```
 VITE_API_TOKEN=your_api_token
