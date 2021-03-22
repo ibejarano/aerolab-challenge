@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import styles from "./ProductsList.module.scss";
+import styles from "./ProductsContainer.module.scss";
 import Product from "./Product";
 
 interface IProduct {

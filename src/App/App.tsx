@@ -4,7 +4,7 @@ import { getUserInfo, getProducts } from "./handlers/apiHandler";
 import { Layout } from "./components/Layout";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
-import { ProductsList } from "./components/ProductsList";
+import { ProductsContainer } from "./components/ProductsContainer";
 import { SortBar } from "./components/SortBar";
 
 interface Product {
@@ -72,7 +72,7 @@ const App: React.FC = () => {
         currPage={currPage}
         setCurrPage={setCurrPage}
       />
-      <ProductsList setPoints={setPoints} points={points} products={products} />
+      <ProductsContainer setPoints={setPoints} points={points} products={products} />
     </Layout>
   );
 };
