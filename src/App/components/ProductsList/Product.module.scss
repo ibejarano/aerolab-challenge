@@ -1,8 +1,13 @@
+:root {
+  --card-width: 275px;
+  --card-height: 250px;
+}
+
 .container_available {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(210, 210, 210);
-  width: 275px;
-  height: 250px;
+  width: var(--card-width);
+  height: var(--card-height);
   margin: 1em;
   padding: 0.5em 2em;
   text-align: left;
@@ -75,8 +80,8 @@
 .container_unavailable {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(210, 210, 210);
-  width: 275px;
-  height: 250px;
+  width: var(--card-width);
+  height: var(--card-height);
   margin: 1em;
   padding: 0.5em 2em;
   text-align: left;
@@ -121,8 +126,8 @@
 .container_redeeming {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(210, 210, 210);
-  width: 275px;
-  height: 250px;
+  width: var(--card-width);
+  height: var(--card-height);
   margin: 1em;
   padding: 0.5em 2em;
   text-align: left;
@@ -165,6 +170,43 @@
       border-radius: 50px;
       border: none;
       color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --card-width: 200px;
+    --card-height: 175px;
+  }
+
+  .container_available {
+    padding: 1.25em;
+
+    .buy-logo {
+      position: relative;
+      top: 2px;
+      left: 125px;
+      width: 32px;
+    }
+    .product-image {
+      border-bottom: 1px solid grey;
+      width: 100%;
+      margin: -55px auto 4px auto;
+      // margin-top: -45px;
+      // margin-bottom: 4px;
+      padding-bottom: 4px;
+    }
+
+    h1 {
+      margin-top: 2px;
+      font-size: 14px;
+    }
+
+    P {
+      margin: 0;
+      font-size: 12px;
+      color: grey;
     }
   }
 }
