@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_API_TOKEN;
+const API_KEY =
+  import.meta.env.VITE_API_TOKEN == "your_api_token"
+    ? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUyNzYyMDdlNzE4NzAwMjBlMzhmOWMiLCJpYXQiOjE2MTYwMTY5Mjh9.APAtK92Np-NroHBYtjZWL_IifWTfC5ZIvV5uSQ_NPnA"
+    : import.meta.env.VITE_API_TOKEN;
+
+console.log(API_KEY);
 
 const BASE_URL = "https://coding-challenge-api.aerolab.co";
 
