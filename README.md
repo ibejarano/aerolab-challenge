@@ -4,7 +4,7 @@
 
 Challenge propuesto por Aerolab en el que se debe implementar una tienda por puntos siguiendo las [Especificaciones](#Especificaciones) 
 
-# [Live Demo](https://aerolab-challenge-7311e.web.app/)
+# [Live Demo](https://aerolab-challenge-7311e.firebaseapp.com/)
 
 # Instalación local
 
